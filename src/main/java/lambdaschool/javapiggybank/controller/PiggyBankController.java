@@ -5,9 +5,10 @@ import lambdaschool.javapiggybank.repository.PiggyBankRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,17 +41,17 @@ public class PiggyBankController
 
     // http://localhost:2019/money/{amount}
 
-    @PutMapping(value = "/{amount}", consumes = "applicaiton/json")
-    public ResponseEntity<?> updateBank(@Valid @RequestBody Coin coin, @PathVariable int amount) {
-        coin.setQuantiy(amount);
-        bankrepo.save(coin);
-
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    @PostMapping(value = "/money", consumes = {"application/json"})
-    public ResponseEntity<?> new bankValue (@Valid @RequestBody Coin coin){
-        coin.setQuantiy(0);
-        coin =
-}
+//    @PutMapping(value = "/{amount}", consumes = "applicaiton/json")
+//    public ResponseEntity<?> updateBank(@Valid @RequestBody Coin coin, @PathVariable int amount) {
+//        coin.setQuantiy(amount);
+//        bankrepo.save(coin);
+//
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
+//
+//    @PostMapping(value = "/money", consumes = {"application/json"})
+//    public ResponseEntity<?> new bankValue (@Valid @RequestBody Coin coin){
+//        coin.setQuantiy(0);
+//        coin =
+//}
 }
